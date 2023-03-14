@@ -202,7 +202,7 @@ color: grey;
    }
 body {
     
-    background-image: url("/images/background.jpg");
+    background-image: url("./images/background.jpg");
     background-repeat: repeat-y;
     background-size: 100%;
     width: 100%;
