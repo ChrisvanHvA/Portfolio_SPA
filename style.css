@@ -16,17 +16,17 @@
 
 article.content {
   padding-left: 7vw;
-  padding-top: 3vw;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
    justify-content:start;
-   align-items: start;
-
+   align-items: stretch;
+   padding-bottom: 5em;
   
 }
 
-article > section {
+article  section {
     
     opacity: 1;
 width: 40vw;
@@ -50,6 +50,8 @@ transform: scale(1.01);
 
 
 .bar {
+    filter: none;
+    
     display: flex;
     flex-direction: row;
    justify-content: space-between;
@@ -63,7 +65,7 @@ transform: scale(1.01);
    background-size: 17px 17px;
    opacity: 1;
 }
-.bar > h2 {
+ h2 {
     opacity: 1;
 color: white;
 font-family: var(--default-font);
@@ -132,12 +134,13 @@ a {
    flex-shrink: inherit;
 
 width: 80%;
-height: 25em;
+height: 30em;
 padding: 1em;
 padding-left: 20%;
 
 }
 .profile > ul {
+
     display: flex;
     flex-direction: row;
 justify-content: center;
@@ -164,8 +167,7 @@ justify-content: center;
   
 }
 .contact {
-    order: 2;
-  align-self: self-end;
+margin-top: 2em;
  }
  .contact > ul {
 list-style: none;
@@ -236,12 +238,12 @@ article > section:nth-of-type(1):has( button:focus)
 
     animation: disappear 1.5s linear;
 }
-article > section:nth-of-type(2):has( button:focus)
+article > ol > li > section:nth-of-type(1):has( button:focus)
 {
 
     animation: disappear 1.5s linear;
 }
-article > section:nth-of-type(3):has( button:focus)
+article > ol > li > section:nth-of-type(2):has( button:focus)
 {
     animation: disappear 1.5s linear;
 } 
@@ -249,7 +251,7 @@ article > section:nth-of-type(3):has( button:focus)
 
 
 
-.wrapper {
+.animbg {
   z-index: -1;
   animation: scroll 70s linear infinite;
   background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80");
@@ -266,4 +268,40 @@ left: 0;
    100%{
     background-position:0px -3000px;
   }
+}
+.repositories > h2:first-of-type {
+    padding-top: 0.5em;
+color: black;
+text-align: center;
+}
+#repo ul {
+    padding-top: 1.5em;
+    width: 90%;
+    margin-left: 5%;
+    list-style: none;
+}
+#repo ul li {
+   
+    background-color: #71c4df69;
+    margin: 0.4em;
+    border-radius: 0.5em;
+transition: all 0.5s;
+}
+#repo ul li:nth-of-type(odd):hover{
+    box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.424);
+    transform: rotate(5deg) scale(1.2);
+    background-color: rgb(219, 113, 223)
+}
+#repo ul li:nth-of-type(even):hover{
+box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.424);
+    transform: rotate(-5deg) scale(1.2);
+    background-color: rgb(254, 46, 112)
+}
+#repo ul li:hover a {
+    color: white;
+}
+#repo ul li ::first-line {
+  font-weight: bold;
+   color: rgb(0, 0, 0);
+   font-size: 1.1em;
 }

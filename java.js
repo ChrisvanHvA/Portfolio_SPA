@@ -41,5 +41,33 @@ github.setAttribute('href', data.html_url);
    
       })}
 
+
+      var repo = document.getElementById("repo");
       fetchInfo();
 
+      function fetchrepo() {
+
+        fetch('https://api.github.com/users/ChrisvanHvA/repos')
+          .then((response) => response.json())
+          .then(function (pur) {
+            
+            console.log (pur)
+            repo.innerHTML = "<ul> <li><a href=\"" + pur[1].html_url + "\"><p>"
+            +  pur[1].name + "<br>" + pur[1].description
+            +"</p></a></li> <li><a href=\"" + pur[3].html_url + "\"><p>"
+            + pur[3].name + "<br>" + pur[3].description
+            +"</p></a></li> <li><a href=\"" + pur[4].html_url + "\"><p>"
+            + pur[4].name + "<br>" + pur[4].description
+            +"</p></a></li> <li><a href=\"" + pur[5].html_url + "\"><p>"
+            + pur[5].name + "<br>" + pur[5].description
+            +"</p></a></li> <li><a href=\"" + pur[7].html_url + "\"><p>"
+            + pur[7].name + "<br>" + pur[7].description
+            +"</p></a></li> <li><a href=\"" + pur[9].html_url + "\"><p>"
+            + pur[9].name + "<br>" + pur[9].description
+            +"</p></a></li> <li><a href=\"" + pur[10].html_url + "\"><p>"
+            + pur[10].name + "<br>" + pur[10].description
+            +"</p></a></li> </ul>"
+         
+      })}
+
+      fetchrepo();
