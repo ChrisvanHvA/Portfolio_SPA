@@ -47,8 +47,13 @@ filter: drop-shadow(10px 10px 0px #c0007d);
 article > section:hover {
 transform: scale(1.01);
 }
-
-
+article ol {
+    list-style: none;
+}
+article  ol  section:hover {
+    transform: scale(1.01);
+    }
+    
 .bar {
     filter: none;
     

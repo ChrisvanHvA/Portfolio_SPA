@@ -12,6 +12,7 @@
        var email = document.getElementById('email');
        var work = document.getElementById('work');
        var github = document.getElementById('github');
+       var repo = document.getElementById("repo");
 function fetchInfo() {
 
     fetch('https://api.github.com/users/ChrisvanHvA')
@@ -20,9 +21,9 @@ function fetchInfo() {
 
         console.log(data);
   
-       date.textContent = "on Github since " + data.created_at;
-     email.textContent = "email: " + data.email;
-work.textContent = "Employed at " + data.company;
+       date.textContent = "On Github since " + data.created_at;
+     email.textContent = "Email: " + data.email;
+work.textContent = "Employment: " + data.company;
 github.textContent = "Github: " + data.login;
 github.setAttribute('href', data.html_url);
 
@@ -30,24 +31,15 @@ github.setAttribute('href', data.html_url);
         pfpic.src= data.avatar_url;
         username.textContent = data.name;
        bio.textContent = data.bio;
-     followers.textContent = "followers:" + data.followers;
-     following.textContent = "following:" + data.following;
+     followers.textContent = "Followers:" + data.followers;
+     following.textContent = "Following:" + data.following;
 
 
 
-      }).catch(function (err) {
-        // voor foutjes
-        console.warn('oepsie woepsie, er is iets stukkie wukkie.', err);
-   
-      })}
-
-
-      var repo = document.getElementById("repo");
-      fetchInfo();
 
       function fetchrepo() {
 
-        fetch('https://api.github.com/users/ChrisvanHvA/repos')
+        fetch('https://api.github.com/users/'+ data.login +'/repos')
           .then((response) => response.json())
           .then(function (pur) {
             
@@ -71,3 +63,13 @@ github.setAttribute('href', data.html_url);
       })}
 
       fetchrepo();
+
+    }).catch(function (err) {
+      // voor foutjes
+      console.warn('oepsie woepsie, er is iets stukkie wukkie.', err);
+ 
+    })}
+
+
+
+    fetchInfo();
