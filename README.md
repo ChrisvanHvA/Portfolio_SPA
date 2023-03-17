@@ -3,7 +3,7 @@ In deze repository vind je de een web page die informatie uit de github API opha
 
 Om je eigen informatie te zien hoef je alleen de username bij de API aan te passen in het Java.js bestand.
 
-##credits:
+## Credits:
 
 Gemaakt door Chris Gabriel III
 
